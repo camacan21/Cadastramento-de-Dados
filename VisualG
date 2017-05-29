@@ -1,0 +1,79 @@
+algoritmo "registro"
+
+Tipo
+    estoque = registro
+       produto: Caracter
+       cod: inteiro
+       preco: real
+       quant_estoque: inteiro
+    fimregistro
+var
+   est: Vetor[1..2] de estoque
+   quant, i, num, cod: inteiro
+inicio
+
+    Procedimento imprime
+       Var i: Inteiro
+       Inicio
+           Limpatela
+           Escreval("Nome    -    Preco    -   Quantidade em estoque")
+           Para i de 1 ate quant faca
+                Escreval(est[i].produto:4,"        ", est[i].preco:4, "       ", est[i].quant_estoque:4)
+           Fimpara
+    Fimprocedimento
+
+   procedimento consulta
+      Inicio
+            imprime()
+   fimprocedimento
+
+
+    procedimento leituradedados
+    
+      var
+         i: inteiro
+      Inicio
+
+
+         quant := 2
+         Para i de 1 ate quant passo 1 faca
+            Escreva("Informe o produto a ser cadastrado: ")
+            Leia(est[i].produto)
+            Escreva("QUANTIDADE: ")
+            Leia(est[i].quant_estoque)
+            Escreva("PREÇO: ")
+            Leia(est[i].preco)
+            Escreva("Informe um código para o produto: ")
+            Leia(est[i].cod)
+            Escreval("")
+            Escreval("")
+         Fimpara
+   fimprocedimento
+   
+   //Inicio da execução
+      Escreval("  ****INFORME A OPÇÃO DESEJADA****")
+      Escreval("CONSULTA - 1")
+      Escreval("CADASTRO - 2")
+      Escreval("ALTERAÇÃO - 3")
+      Escreval("SAIR - 4")
+      Leia(num)
+      Escreval("")
+
+      Enquanto (num>=1) E (num<=4) faca
+         Escolha num
+            Caso 1
+                 consulta
+            Caso 2
+                 leituradedados
+         Fimescolha
+         
+         Escreval("  ****INFORME A OPÇÃO DESEJADA****")
+         Escreval("CONSULTA - 1")
+         Escreval("CADASTRO - 2")
+         Escreval("ALTERAÇÃO - 3")
+         Escreval("SAIR - 4")
+         Leia(num)
+         Escreval("")
+      Fimenquanto
+
+fimalgoritmo
